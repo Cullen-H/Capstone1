@@ -30,7 +30,7 @@ API link: https://spoonacular.com/food-api
 ### Project Outline
 
 #### Database Schema
-##### Rough Draft (subject to change)
+Rough Draft (subject to change)
 ![database schema demo](https://github.com/Cullen-H/Capstone1/blob/demo/dbschema.jpg)
 
 #### Potential Issues
