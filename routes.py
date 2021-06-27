@@ -13,16 +13,16 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy.sql.expression import func
 
 try:
+# api-key for testing
     from apikeys import KeyRing
+    keys = KeyRing()
 except:
-    pass
+    keys="123"
 
 routes = Blueprint("routes", __name__, static_folder="static", template_folder="templates")
 
 CURR_USER_KEY = "curr_user"
 
-# api-key for testing
-keys = KeyRing()
 
 @routes.before_request
 def add_user_to_g():
