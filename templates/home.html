@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div id="home-container">
+    <h1 id="home-header">Try this!</h1>
+
+    <div id="recommendation-options">
+        Diet: <select id="diet-dd">
+            <option value="None">None</option>
+            <option value="Vegan">Vegan</option>
+            <option value="GlutenFree">Gluten Free</option>
+            <option value="Ketogenic">Ketogenic</option>
+            <option value="Vegetarian">Vegetarian</option>
+            <option value="Lacto-Vegetarian">Lacto-Vegetarian</option>
+            <option value="Ovo-Vegetarian">Ovo-Vegetarian</option>
+            <option value="Pescetarian">Pescetarian</option>
+            <option value="Paleo">Paleo</option>
+            <option value="Primal">Primal</option>
+            <option value="Whole30">Whole30</option>
+        </select>
+    </div>
+    <div id="recommendation-container">
+
+    </div>
+    <a id="cook-btn-a" href=""><button id="cook-btn">Cook</button></a>
+    <button id="skip-btn">Next</button>
+    
+
+    <script src="static/scripts/home.js"></script>
+    
+</div>
+{% if user %}
+<a id="create-mp-btn" href="/foods/new_mealplan">Create a mealplan!</a>
+{% endif %}
+
+{% endblock %}

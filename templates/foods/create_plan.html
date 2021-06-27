@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Create MealPlan{% endblock %}
+
+{% block content %}
+
+<div id="create-mp-container">
+    <h1>Create a Meal Plan</h1>
+    <label for="days-select">How many days?</label>
+    <select id="days-select">
+        {% for x in range(1, 32) %}
+        <option value="{{ x }}">{{ x }}</option>
+        {% endfor %}
+    </select>
+    
+    <div>
+        <label for="mp-checkboxes">Which meals would you like included each day?</label>
+        <div id="mp-checkboxes" name="mp-checkboxes">
+            <label for="mp-breakfast">Breakfast</label>
+            <input type="checkbox" id="mp-breakfast" name="mp-breakfast" value="breakfast">
+            <label for="mp-lunch">Lunch</label>
+            <input type="checkbox" id="mp-lunch" name="mp-lunch" value="lunch">
+            <label for="mp-dinner">Dinner</label>
+            <input type="checkbox" id="mp-dinner" name="mp-dinner" value="dinner">
+        </div>
+    </div>
+    <div id="btns-container">
+        <button id="new-plan-submit">Create new plan!</button>
+    </div>
+</div>
+    
+<div id="new-plan-container"></div>
+
+<script src="../../static/scripts/create_plan.js"></script>
+
+{% endblock %}

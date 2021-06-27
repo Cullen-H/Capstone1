@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ food.title }}{% endblock %}
+
+{% block content %}
+
+<div id="food-info-container">
+<div id="food-data-bar">
+    <div>
+    <h1 id="food-name">{{ food.title }}</h1>
+    </div>
+    {% if user %}
+    <div id="rate-container">
+        <h2>
+        <i id="like-btn" class="far fa-thumbs-up fa-lg"></i>
+        <i id="dislike-btn" class="far fa-thumbs-down fa-lg"></i>
+        </h2>
+    </div>
+    {% endif %}
+</div>
+
+<div id="recommendation-img-container"><img src="{{ food.image }}"></div>
+
+<div id="detailed-info-container">
+    <h1>Ingredients Required</h1>
+    <div id="ingredients-container">
+        {% for ingredient in food.extendedIngredients %}
+        <div class="ingredient-info">
+        {{ ingredient.original }}
+        </div>
+        {% endfor %}
+    </div>
+
+    <ol id="instructions-container">
+        <h1>Cooking Instructions</h1>
+        {% for step in food.analyzedInstructions[0].steps %}
+        <li class="instruction-container">
+            <h3>{{ step.step }}</h3>
+            {% if step.ingredients %}
+            <ul>
+            {% for ingredient in step.ingredients %}
+            <li class="instruction-ingredient">{{ ingredient.name }}</li>
+            {% endfor %}
+            </ul>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ol>
+</div>
+
+<script>
+const foodApiId = {{ food.id }}
+</script>
+<script src="../../static/scripts/display_info.js"></script>
+
+{% endblock %}
