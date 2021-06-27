@@ -12,9 +12,15 @@ app = Flask(__name__)
 app.register_blueprint(routes, url_prefix="")
 
 db_uri = os.environ.get('DATABASE_URL')
+print("+++++++++++++++++++++++++++++++")
+print(db_uri)
+print("+++++++++++++++++++++++++++++++")
 
 if db_uri:
     db_uri.replace("://", "ql://", 1)
+    print("==================================")
+    print(db_uri)
+    print("==================================")
 else:
     db_uri = 'postgresql:///food-recommender'
 
