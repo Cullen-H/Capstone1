@@ -20,7 +20,7 @@ try:
 except:
     class KeyRing:
         def __init__(self):
-            self.SPOON_KEY = os.environ.get(SPOONACULAR_KEY, "")
+            self.SPOON_KEY = os.environ.get("SPOONACULAR_KEY", "")
 
 routes = Blueprint("routes", __name__, static_folder="static", template_folder="templates")
 
