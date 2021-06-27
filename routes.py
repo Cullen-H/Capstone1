@@ -11,7 +11,11 @@ from forms import RegisterForm, LoginForm
 from models import db, connect_db, User, MealPlan, Like, Dislike, RecommendBlacklist
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.sql.expression import func
-from apikeys import KeyRing
+
+try:
+    from apikeys import KeyRing
+except:
+    pass
 
 routes = Blueprint("routes", __name__, static_folder="static", template_folder="templates")
 
