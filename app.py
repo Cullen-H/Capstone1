@@ -11,7 +11,7 @@ from models import db, connect_db
 app = Flask(__name__)
 app.register_blueprint(routes, url_prefix="")
 
-app.config['SQLALCHEMY_DATABASE_URI'] = (os.environ.get('DATABASE_URL', 'postgresql:///food-recommender'))
+app.config['SQLALCHEMY_DATABASE_URI'] = (os.environ.get('DATABASE_URL'.replace("://", "ql://", 1), 'postgresql:///food-recommender'))
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = False
 app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = True
