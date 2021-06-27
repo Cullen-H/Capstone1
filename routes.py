@@ -1,3 +1,4 @@
+import os
 import requests
 import json
 import math
@@ -13,15 +14,20 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy.sql.expression import func
 
 try:
-# api-key for testing
+    # api-key for testing
     from apikeys import KeyRing
     keys = KeyRing()
 except:
-    keys="123"
+    class KeyRing:
+        def __init__(self):
+            self.SPOON_KEY = os.environ.get(SPOONACULAR_KEY, "")
+        
 
 routes = Blueprint("routes", __name__, static_folder="static", template_folder="templates")
 
 CURR_USER_KEY = "curr_user"
+
+keys = KeyRing()
 
 
 @routes.before_request
