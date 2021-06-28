@@ -19,7 +19,7 @@ print("8888888888888888888888888888888")
 print("+++++++++++++++++++++++++++++++")
 
 print("sudfhisdjhkfhdsagfhkjs")
-print(dburi.replace('postgres://', 'potgresql://'))
+print(db_uri.replace('postgres://', 'potgresql://'))
 print("sudfhisdjhkfhdsagfhkjs")
 
 if db_uri:
