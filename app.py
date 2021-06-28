@@ -13,16 +13,22 @@ app.register_blueprint(routes, url_prefix="")
 
 db_uri = os.environ.get('DATABASE_URL')
 print("+++++++++++++++++++++++++++++++")
+print("8888888888888888888888888888888")
 print(db_uri)
+print("8888888888888888888888888888888")
 print("+++++++++++++++++++++++++++++++")
 
 if db_uri:
     db_uri.replace("postgres://", "postgresql://", 1)
     print("==================================")
+    print("This is after checking that db_uri exists ")
     print(db_uri)
+    print("8888888888888888888888888888888")
     print("==================================")
 else:
     db_uri = 'postgresql:///food-recommender'
+    print("============FAILED============")
+    print(db_uri)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
