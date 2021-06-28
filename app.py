@@ -12,15 +12,6 @@ app = Flask(__name__)
 app.register_blueprint(routes, url_prefix="")
 
 db_uri = os.environ.get('DATABASE_URL')
-print("+++++++++++++++++++++++++++++++")
-print("8888888888888888888888888888888")
-print(db_uri)
-print("8888888888888888888888888888888")
-print("+++++++++++++++++++++++++++++++")
-
-print("sudfhisdjhkfhdsagfhkjs")
-print(db_uri.replace('postgres://', 'potgresql://'))
-print("sudfhisdjhkfhdsagfhkjs")
 
 if db_uri:
     app.config['SQLALCHEMY_DATABASE_URI'] = db_uri.replace('postgres://', 'postgresql://', 1)
