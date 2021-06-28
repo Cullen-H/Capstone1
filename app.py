@@ -18,19 +18,14 @@ print(db_uri)
 print("8888888888888888888888888888888")
 print("+++++++++++++++++++++++++++++++")
 
-if db_uri:
-    db_uri.replace("postgres://", "postgresql://", 1)
-    print("==================================")
-    print("This is after checking that db_uri exists ")
-    print(db_uri)
-    print("8888888888888888888888888888888")
-    print("==================================")
-else:
-    db_uri = 'postgresql:///food-recommender'
-    print("============FAILED============")
-    print(db_uri)
+print("sudfhisdjhkfhdsagfhkjs")
+print(dburi.replace('postgres://', 'potgresql://'))
+print("sudfhisdjhkfhdsagfhkjs")
 
-app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
+if db_uri:
+    app.config['SQLALCHEMY_DATABASE_URI'] = db_uri.replace('postgres://', 'postgresql://', 1)
+else:
+    app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = False
 app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = True
