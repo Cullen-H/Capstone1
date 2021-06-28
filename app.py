@@ -17,7 +17,7 @@ print(db_uri)
 print("+++++++++++++++++++++++++++++++")
 
 if db_uri:
-    db_uri.replace("://", "ql://", 1)
+    db_uri.replace("postgres://", "postgresql://", 1)
     print("==================================")
     print(db_uri)
     print("==================================")
