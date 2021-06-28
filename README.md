@@ -1,11 +1,47 @@
-# Food Recommender
+# Spin a Meal
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-optio, eaque rerum! Provident similique accusantium nemo autem.
+Hosted link: https://cullen-hutchison-capstone1.herokuapp.com/
 
-## Proposal
+### Description
+<p>
+This is a simple website for providing meal recommendations. You can filter it by diet and choose specific ingredients to exclude. If you sign up for an account, 
+you can also like or dislike foods. Foods will then be recommended more or less frequently. As a logged in user, you may also create a meal plan 
+this will also follow your diet and exlusion preferences. I thought it was important to provide users the option to avoid foods they dislike and, 
+after a reasonable amount of time, provide them with foods they had previously liked. Generatiung meal plans is an important part of 
+any website that gives users foods to make. On top of that, I chose to add grocery lists week by week for these meal plans. Having that addition 
+will make cooking these foods far less inconvenient.
+</p>
+
+### Standard User Flow
+<p>
+Upon visting the site, you will automatically be given a meal recommendation. If you are logged in, it will follow your user preferences. 
+You will have the option to skip that recommendation or cook it. Skipping will provide a new recommendation, whereas pressing cook will redirect you 
+to a food details page. In that page you will ahve instructions, ingredients and the option tolike or dislike. There is, at all stages, a navbar that 
+can redirect you to home, take you to login/register, or for users who are logged in, allow them to visit their profile ort log out. In your profile 
+you can adjust your dietary and exclusion preferences. You can also viwe your current meal plan and grocery list if applciable.
+</p>
+
+### API notes
+<p>
+I deliberately avoided more concise filtering to decrease the number of requests being sent to the server during this project. 
+If I had access to a paid plan I would have liked to filter more thoroughly based on usert preferences.
+</p>
+
+### Tech Stack Used
+
+This project used:
+ - Spoonacular API
+ - Flask
+ - Postgresql
+ - SQLAlchemy
+ - Bcrypt
+ - WTForms
+ - requests - python
+ - ajax - js
+ - font awesome
+ - Jinja
+
+## Original Project Proposal
 
 ### Goal
 <p>
