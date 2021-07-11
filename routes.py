@@ -208,7 +208,6 @@ def dislike_toggle(food_api_id):
             db.session.add(dislike)
         if like:
             db.session.delete(like)
-        print(outputJSON)
         db.session.commit()
         return jsonify(outputJSON)
     else:
@@ -337,6 +336,7 @@ def update_prefs():
     user.preferences = json.dumps({"diet": data["diet"], "exclude": data["exclude"]})
     db.session.add(user)
     db.session.commit()
+    print(user)
     return jsonify(preferences=user.preferences)
 
 # User auth

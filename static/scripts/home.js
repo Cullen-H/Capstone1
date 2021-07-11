@@ -27,8 +27,6 @@ const loadingHTML = `
 const imageNA = 'static/images/imageNA.jpg';
 
 async function getRecommendation() {
-    // change to recursive for checking likes/dislikes/blacklistS
-    // check liked and cross ref with black lists. Give chance to recommend a previously liked food.
     currRespId = null;
     $("#recommendation-container").empty();
     $("#recommendation-container").append(loadingHTML);
